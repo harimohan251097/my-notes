@@ -1,0 +1,20 @@
+Dear Hiring Manager,
+
+I am excited about the Python/Backend Developer role at your company. With 3.5+ years in Backend Development, I've excelled in leading projects and achieving significant results.
+
+As Edupherz Pvt. Ltd's Backend Developer, I spearheaded the development of the Fernglasz website in Spring Boot and Kotlin. I optimized RESTful APIs, reduced response times by 30%, and maintained clean codebases through Spring Security integration and diligent code reviews.
+
+At Deloitte Consulting India Pvt. Ltd (Mar 2021 - May 2023), I played a pivotal role as a Python Developer (DC-Analyst), ensuring a seamless migration of transactional records and resolving over 50 defects. I managed releases and data loads in QA and UAT Environments.
+
+In my previous role at Kloudone Technology Works Pvt. Ltd (Oct 2020 - Mar 2021), I developed applications in Python Django, Rest API, and MySQL, addressing performance issues and enhancing reporting speed by 24%.
+
+Committed to continuous learning, I hold certifications in Programming, Data Structures, Algorithms, Django Python Development, Red Hat Certified System Administrator, and Microsoft Technology Associate.
+
+Among my achievements are the "Team Spot Award" at Deloitte in 2023, "Outstanding Performer of the Year" in 2022, and a Global Rank-2932 in Google Hash code 2019. I also won the Janagni-2K18 Coding Competition at GKV University in 2018.
+
+Confident in my technical expertise and positive attitude, I am eager to contribute to your team's success as a Python/Backend Developer.
+
+Thank you for considering my application. I look forward to discussing how my experience aligns with your needs.
+
+Sincerely,
+Hari Mohan Meena

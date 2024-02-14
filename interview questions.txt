@@ -1,0 +1,96 @@
+Rest API methods :
+
+HTTP GET http://api.example.com/device-management/managed-devices  //Get all devices
+HTTP POST http://api.example.com/device-management/managed-devices  //Create new Device
+
+HTTP GET http://api.example.com/device-management/managed-devices/{id}  //Get device for given Id
+HTTP PUT http://api.example.com/device-management/managed-devices/{id}  //Update device for given Id for all coulumns
+HTTP DELETE http://api.example.com/device-management/managed-devices/{id}  //Delete device for given Id
+
+PATCH  //Update device for given Id for specified columns .
+
+Method	Summary																	CRUD	Accepts Request Body	Idempotnent	Safe
+GET		To fetch a single resource or group of resources						Read	No	Yes	Yes
+PUT		To update an entire resource in one go									Update	Yes	Yes	No
+POST	To create a new resource												Create	Yes	No	No
+PATCH	To partially update a resource											Update	Yes	No	No
+DELETE	To delete a resource													Delete	No	Yes	No
+OPTIONS	To get information on permitted operations								Read	No	Yes	Yes
+HEAD	To get metadata of the endpoint											Read	No	Yes	Yes
+TRACE	For diagnosing purposes													Read	No	Yes	Yes
+CONNECT	To make the two-way connection between the client and the resource.	-			No	No	No
+
+
+
+
+Dajngo:-
+
+Python manage.py makemigrations 	makemigartion means:- create SQL query for chnages in model.py
+Python manage.py migrate   			migrate means :- apply all chnage in DB.
+
+"""
+from django.db import models
+
+class Author(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+class Post(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    published_date = models.DateTimeField(blank=True, null=True)
+    author = models.ManyToManyField(Author, related_name="posts") or author= models.ForeignKey(Author, on_delete = models.CASCADE)
+
+    def __str__(self):
+        return self.title
+"""
+
+	Author.objects.all() # print all author
+
+	vmb = Author.objects.get(name="VM (Vicky) Brasseur")
+	vmb.name      # print author name ='VM (Vicky) Brasseur'
+	vmb.posts.all()   # print all post related to author='VM (Vicky) Brasseur'
+
+	for post in vmb.posts.all():
+		print(post.title)   #print all post related to author='VM (Vicky) Brasseur'
+		
+	Author.objects.filter(name__contains="Vic")  #print all author name like '%vic%'
+
+	a = Post(title = "Divide", content = "Ed Sheeran", pubilsh = "09-09-2012", Author='Brasseur')
+	a.save() # insert new record in DB  create operation
+
+	Post.objects.filter(title = "The Beatles");  #show all record having title="The Beatles"  read operation
+	
+	k=Post.objects.filter(pk=2);  #show record having primary key is 2
+	k.content='edited by me'
+	k.save()                       #edit the content by given name  update operation
+	
+	k.delete()    #delete the Pk=2 record
+	Post.objects.filter(title = "The Beatles").delete()  #delete multiple records all at once
+	
+	
+middleware:
+In Django, middleware is a lightweight plugin that processes during request and response execution. Middleware is used to perform a function in the application. The functions can be a security, session, csrf protection, authentication etc.
+
+signals in django:
+Signals are used to perform some action on modification/creation of a particular entry in Database. For example, One would want to create a profile instance, as soon as a new user instance is created in Database
+
+AWS Glue
+	AWS Glue is a serverless data integration service that makes it easier to discover, prepare, move, and integrate data from multiple sources for analytics, machine learning (ML), and application development.
+
+AWS redshift: 
+	OLAP is an Online Analytics Processing System used by the Redshift.
+	Redshift is a fast and powerful,easy to setup, deploy and manged, cost efficient, scale quickly to meet your need, secure ,we can query our data lake anytime ) data warehouse 	service in the cloud.
+	
+AWS Athena
+	Amazon Athena is an interactive query service that makes it easy to analyze data directly in Amazon Simple Storage Service (Amazon S3) using standard SQL.
+	
+AWS Transfer Family	
+	AWS Transfer Family modernizes and secures recurring file transfers so your data arrives on time with high availability,
+	 AWS Transfer Family offers fully managed support for the transfer of files over SFTP, AS2, FTPS, and FTP directly into and out of Amazon S3 
+	 
+AWS EMR	 
+	 an Amazon Web Services (AWS) tool for big data processing and analysis.
+	 managed cluster platform that simplifies running big data frameworks, such as Apache Hadoop and Apache Spark , on AWS to process and analyze vast amounts of data.

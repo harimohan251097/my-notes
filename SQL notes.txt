@@ -1,0 +1,208 @@
+Mysql--
+
+1) GROUP_CONCAT -- for concate all value of a column in a single satement 
+	example- SELECT group_concat(name separator ',')  FROM EMPLOYEE ;
+	input=>	name    output => hari,mohan,meena
+			hari
+			mohan
+			meena
+
+2) CONCAT_WS and CONCAT --	use to concate different expression or column value using a separator
+	example - SELECT CONCAT_WS("-", "SQL", "Tutorial", "is", "fun!") AS ConcatenatedString; # SQL-Tutorial-is-fun!
+	
+	Select CONCAT('Ram','is','a','good','student') AS 'Example of CONCAT()';
+	+---------------------+
+	| Example of CONCAT() |
+	+---------------------+
+	| Ramisagoodstudent   |
+	+---------------------+
+
+	 Select CONCAT_WS(' ','Ram','is','a','good','student') AS 'Example of CONCAT_WS()';
+	+------------------------+
+	| Example of CONCAT_WS() |
+	+------------------------+
+	| Ram is a good student  |
+	+------------------------+
+
+3) TRUNCATE(): The TRUNCATE() function truncates a number to the specified number of decimal places.
+	example- SELECT TRUNCATE(135.375, 2); #135.37
+	
+4)JOIN-- use to combine 2 or more table 
+		T1- 1,2,3,4,null,null
+		T2- 5,6,2,4,null
+
+	INNER JOIN or JOIN-- The INNER JOIN keyword selects all rows from both tables as long as there is a match between the columns. If there are records in the "Orders" table that do not have matches in "Customers", these orders will not be shown! 
+	output- 2,4
+	
+	LEFT JOIN--The LEFT JOIN keyword returns all records from the left table (table1), and the matching records from the right table (table2). The result is 0 records from the right side, if there is no match. 
+	output- 1,2,3,4,null,null( only 2 ,4 will have value for T2 and all other having null for T2 records)
+	
+	RIGHT JOIN-- The Right JOIN keyword returns all records from the right table (table2), and the matching records from the left table (table1). The result is 0 records from the right side, if there is no match. 
+	output- 5,6,2,4,null( only 2 ,4 will have value for T1 and all other having null for T1 records)
+	
+	FULL JOIN or FULL OUTER JOIN--- if there is any row which fulfilled condition will appear and all Right records appear with null left record and all left records appear with right null records. 
+	output-combine all output of above 3 joins
+	
+5) EXISTS-- EXISTS operator is used to test for the existence of any record in a subquery.
+			SELECT SupplierName FROM Suppliers WHERE EXISTS (SELECT ProductName FROM Products WHERE Products.SupplierID = Suppliers.supplierID AND Price < 20);
+
+6) SELECT INTO --  statement copies data from one table into a new table.
+			SELECT * INTO newtable [IN externaldb] FROM oldtable WHERE condition;
+
+12) INSERT INTO --  statement copies data from one table and inserts it into another table.
+			INSERT INTO table2 (column1, column2, column3, ...) SELECT column1, column2, column3, ... FROM table1 WHERE condition;
+			
+7) Update --UPDATE statement is used to modify the existing records in a table.
+			UPDATE table_name SET column1 = value1, column2 = value2, ... WHERE condition;
+		
+8) DELETE --DELETE statement is used to delete existing records in a table.
+			DELETE FROM table_name WHERE condition;
+	
+9) LIMIT -- clause is used to specify the number of records to return.
+			SELECT column_name(s) FROM table_name WHERE condition LIMIT number;
+			SELECT * FROM Customers limit (SELECT count(*)*50/100 FROM Customers); #use when there is no of percentage records need to show
+
+10) WIDCARD(LIKE)-- A wildcard character is used to substitute one or more characters in a string.Wildcard characters are used with the LIKE operator.
+			wildcard charater --- %,_ ,[],-,^ ---> %hm%, h_m, h[ot]m, h[^ot]m, h[a-d]m
+			
+11) HAVING-- HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions.
+
+13) CASE -- CASE expression goes through conditions and returns a value when the first condition is met (like an if-then-else statement).
+			CASE WHEN condition1 THEN result1 WHEN condition2 THEN result2 WHEN conditionN THEN resultN ELSE result END;
+
+14) COALESCE(), and NVL()-- function lets you return an alternative value if an expression is NULL--
+			SELECT ProductName, UnitPrice * (NVS(UnitsInStock,0) + COALESCE(UnitsOnOrder, 0)) FROM Products;
+					
+15) comment --  example-- single line--> --statement or multiline--> /* statement1 
+																	statement2 */
+																	
+16) DROP-- statement is used to drop an existing table or database.
+			example -  DROP TABLE table_name;  or  DROP DATABASE databasename;
+
+
+17) BACKUP DATABASE-- statement is used in SQL Server to create a full back up of an existing SQL database.
+			BACKUP DATABASE testDB TO DISK = 'D--\backups\testDB.bak';
+
+18)ALTER TABLE-- statement is used to add, delete, or modify columns in an existing table.
+			example -	ALTER TABLE Customers ADD COLUMN Email varchar(255) AFTER ADDRESS; --add column
+						ALTER TABLE Customers DROP COLUMN Email;  --delete column
+						ALTER TABLE table_name MODIFY COLUMN column_name datatype; --modify column
+						ALTER TABLE table_name RENAME COLUMN old_name to new_name; --rename column
+						
+19) constraints -- SQL constraints are used to specify rules for data in a table.
+			example -   AUTO INCREMENT - keyword to perform an auto-increment feature. ex- AUTO_INCREMENT=100; --start sequence form 100
+						NOT NULL - Ensures that a column cannot have a NULL value ex - NOT NULL
+						UNIQUE - Ensures that all values in a column are different ex- UNIQUE
+						PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table PRIMARY KEY (OrderID)
+						FOREIGN KEY - Prevents actions that would destroy links between tables  MYSQL - FOREIGN KEY (PersonID) REFERENCES Persons(PersonID) ex- MS SQL -PersonID int FOREIGN KEY REFERENCES Persons(PersonID)
+						CHECK - Ensures that the values in a column satisfies a specific condition ex- CHECK (Age>=18)
+						DEFAULT - Sets a default value for a column if no value is specified DEFAULT 'Sandnes'
+						CREATE INDEX - Used to create and retrieve data from the database very quickly 
+								example index need to declare separatly -- CREATE INDEX idx_pname ON Persons (LastName, FirstName);
+						
+20)SQL injection:   --SQL injection is a code injection technique that might destroy your database.
+					--SQL injection is one of the most common web hacking techniques.
+					--SQL injection is the placement of malicious code in SQL statements, via web page input.
+					
+21) DATE and TIME related function:
+	
+	ADDTIME: The ADDTIME() function adds only  time(hour,minute,second) then returns the time/datetime.	
+			example - SELECT ADDTIME("2017-06-15 09:34:21", "24:00:20");
+
+	ADDDATE : The ADDDATE() function adds a time/date interval to a date and then returns the date. (can add second,minute,hour,day,week,month,year)
+			example - SELECT ADDDATE(ADDDATE("2017-06-15 09:34:21", INTERVAL 10 year ), INTERVAL 10 day ); # 2027-06-25 09:34:21
+	
+	DATE_SUB(): The DATE_SUB() function subtracts a time/date interval from a date and then returns the date.just like ADDDATE().
+		ex- DATE_SUB(date, INTERVAL value interval) or SELECT DATE_SUB("2017-06-15 09:34:21", INTERVAL 15 DAY);
+			
+	CURDATE(): used to fetch today date  example : SELECT CURDATE();
+	
+	DIFFDATE: Return the number of days between two date values: ex- SELECT DATEDIFF("2017-06-25", "2017-06-15");
+	
+	DATE_FORMAT(): return particular part of timestamp ex- SELECT DATE_FORMAT("2017-06-15", "%Y"); #2017
+		%i- minutes, %S- second, %H-hour, %D-day, %M-month, %Y-year
+	
+	NOW: The NOW() function returns the current date and time.
+	
+22)ADvance function:
+
+	CAST: The CAST() function converts a value (of any type) into the specified datatype.
+		ex- SELECT CAST(150 AS CHAR);
+		
+	COALESCE: The COALESCE() function returns the first non-null value in a list.
+		ex- SELECT COALESCE(NULL, NULL, NULL, 'W3Schools.com', NULL, 'Example.com');  #W3Schools.com
+
+	IF: he IF() function returns a value if a condition is TRUE, or another value if a condition is FALSE.
+		ex- SELECT IF(500<1000, 5, 10);
+		
+	
+23) Difference between MySQL and PostgreSQL
+
+	MySQL										PostgreSQL
+1.	It is the most popular Database.			It is the most advanced Database.
+2.	It is a relational-based DBMS.				It is an object-based relational DBMS
+4.	The implementation language is C/C++.		The implementation language is C.
+5.	It supports the CASCADE option.				CASCADE option is supported.(if used CASCADE while drop tale its dependent table also droped)
+6.	GUI tool provided is MySQL Workbench		PgAdmin is provided
+7.	It does not support partial, bitmap,		It supports all of these
+	and expression indexes
+9.	SQL only supports Standard data types.		It supports Advanced data types such as arrays, hstore, and user-defined types.
+10.	SQL provides limited MVCC support.			Full MVCC support.
+Multiversion concurrency control (MVCC) is a database optimization technique that creates duplicate copies of records so that data can be safely read and updated at the same time.
+
+
+24) Window functions in SQL:
+
+	Window functions applies aggregate and ranking functions over a particular window (set of rows).
+	
+25) convert 1 column and 2 row into 1 row and 2 COLUMN
+
+	values1
+	12
+	54
+
+	SELECT
+    MAX(CASE WHEN row_number = 1 THEN values1 END) AS value1,
+    MAX(CASE WHEN row_number = 2 THEN values1 END) AS value2
+	FROM(SELECT
+			values1,
+			ROW_NUMBER() OVER (ORDER BY values1) AS row_number
+		FROM
+			my_table) 
+	
+	output:
+	value1 value2
+	12		54
+	
+26)	 convert vertical data into horizontal
+	given 
+	category 2015 2016 2017 
+	A		25		40	12
+	B		20		34	50 
+	
+	need output:- 
+	category year sales
+	A	2015		25
+	A	2016		40
+	A	2017		12
+	B	2015		20
+	B	2016		34
+	B	2017		50
+	
+	QUERY:-
+	
+	Select Category, Year, Sales from 
+	( Select Category, [2015], [2016], [2017]
+	from dbo.Sales ) OrigSales
+	UNPIVOT
+	(Sales FOR YEAR IN ([2015], [2016], [2017])
+	) as UNPIVT_SALES
+	
+	
+Comparing Union and Union All
+S.No.	UNION	                                                                           UNION ALL
+1.	Union eliminates duplicate rows from the result set.	                    Union All does not eliminate duplicate rows from the result set.
+2.	Union may perform slower due to the process of eliminating duplicate rows.	Union All performs faster as it does not have to process duplicate rows.
+3.	Union is commonly used by SQL users.	                                    Union All is not as commonly used as Union.
+
+

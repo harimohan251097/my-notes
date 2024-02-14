@@ -1,0 +1,22 @@
+Dear Hiring manager,
+
+I am writing to express my interest in the Python/Backend Developer role at Your company, as advertised. With a strong background in Backend Development, data migration, and Integration, along with over 3.5 years of hands-on experience, I am confident in my ability to contribute effectively to your team.
+
+In my current role as a Software Engineer (Backend Developer) at Edupherz Pvt. Ltd since June 2023, I am instrumental in driving the development of the Fernglasz website. Specializing in Spring Boot and Kotlin, I design and maintain efficient RESTful APIs, optimizing data models in PostgreSQL and reducing response times by 30%. My responsibilities include integrating Spring Security for secure authentication, collaborating with front-end developers, and conducting code reviews to ensure clean and efficient codebases.
+
+At Deloitte Consulting India Pvt. Ltd, where I worked as a Python Developer (DC-Analyst) from Mar 2021 to May 2023, I played a pivotal role in ETL code development and data pipeline construction, facilitating smooth migration of transactional records. Serving as the Single Point of Contact (SPOC) for the Development team, I successfully resolved over 50 defects, deployed 8+ releases for Production systems, and managed data loads in QA and UAT Environments.
+
+In my prior role as a Software Engineer (Backend Developer) at Kloudone Technology Works Pvt. Ltd (Oct 2020 - Mar 2021), I gained hands-on experience in developing services and applications using the Python Django Framework, Rest API, and MySQL database. I successfully identified and addressed performance issues in applications, integrated RESTful APIs, and collaborated to enhance reporting speed by 24% for the internal analytics team.
+
+I hold a Bachelor's Degree in Computer Science Engineering from Gurukula Kangri University, Haridwar, with a CGPA of 8.21/10 (2016 - 2020). My academic projects included developing a web-based application using Python and Django framework to manage and automate Linux OS tasks, and participating in a team-based project to design and implement a database management system for a fictional company, utilizing SQL and database normalization techniques.
+
+I have pursued relevant certifications, including Nptel certification for Programming, Data Structures, and Algorithms using Python, Learning Django Python Development by Building Project, Red Hat Certified System Administrator, and Microsoft Technology Associate: Software Development Fundamentals.
+
+My achievements include being awarded the "Team Spot Award" at Deloitte 2023 for winning the client's confidence and delivering a defect-free production on time, the "Outstanding Performer of the Year" at Deloitte 2022 for excellent work, securing Global Rank-2932 in Google Hash code 2019, and winning the Janagni-2K18 Coding Competition at GKV University in 2018.
+
+I am confident that my technical expertise, combined with my problem-solving abilities and positive attitude, make me a strong fit for the [Position] role at [Company Name]. I am eager to bring my skills and achievements to your team and contribute to your organization's success.
+
+Thank you for considering my application. I look forward to the opportunity to discuss how my experience aligns with your needs.
+
+Sincerely,
+Hari Mohan Meena

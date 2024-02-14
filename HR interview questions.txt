@@ -1,0 +1,78 @@
+Linkedin note for Recruiter:(monday)
+
+I'm excited to connect and express my interest in any Python, MySQL, and backend job openings at your company. With my strong skills and experience in these areas, I am confident that I can make a valuable contribution to your team. Thank you for considering my application.
+
+Thanks
+Hari
+9617793297
+
+Why should we hire you?
+	Well, I have all of the skill that you’re looking for and I’m confident that I would be a perfect candidatefor this  rol.t I’m also passionate about this industry and I’m driven to deliver high-quality work. i have also work in python during my internship where i got best intern award for my work. i have made 5 project out of which 3 are in python.
+
+Tell me about yourself?
+	I am an energetic person, Great team player and a quick learner. I was also one of the top students in my batch while I was pursuing a B.E degree in the XYZ domain. I worked on various projects related to the software domain which provided me a great deal of technical exposure along with the importance of working in a team........I believe I am a good fit for technology-centric roles in your company.
+
+Why do you want to work for our company?  research company for this question
+	I feel that with my current skill sets and my experience in the software domain, the job requirements this role presented are a perfect match for me. I could visualize myself in that role as it aligned with my career aspirations, skills, and expertise. Besides, I have researched your company and found that it has impressive and promising projections which made me excited to be a part of the amazing future. I would take pride in working under the great leadership of this company and I found this place to be a perfect fit for utilizing my expertise along with the promising aspect of personal growth.
+
+What are your greatest strengths and weaknesses?
+	strength - I am an energetic person, Great team player and a quick learner.  weakness --concentrate one thing at a time.
+	
+	 As a great team player, you actively participate in brainstorming sessions, offering creative ideas and suggestions. You listen attentively to your teammates' perspectives and provide constructive feedback to help refine and improve their ideas.
+	 
+	During team meetings or brainstorming sessions, they actively contribute ideas and offer solutions with genuine excitement. Their enthusiasm is infectious, motivating others to participate and collaborate wholeheartedly.Even during challenging moments, the energetic person maintains their high spirits and displays resilience. They encourage team members, reminding them of the bigger picture and emphasizing the potential for growth and success
+
+
+Why are you looking for a change?
+	The reason I am looking for change is that I feel like now is the time to expand my horizon. I have worked in my current company for quite a long time and while I am grateful for all the opportunities that were presented to me there, I want to go beyond my current role here, explore different avenues and take up challenging roles to enhance my skill set and I believe that your company will be the perfect place for me to push and grow myself as an individual.
+
+What is your current salary?
+	My employer considers employee salaries confidential, and access to this information is limited to management inside our organization. So, I am unable to share it with you. However, if you share the salary level and range for this position, I can confirm whether my salary is within that range or not.
+	
+How do you see yourself 5 years from now?
+	i see my self in a senior position managing important portfolio of this company 
+	
+	
+	
+Basic Snapshotting
+Command	Description
+git status	Check status
+git add [file-name.txt]	Add a file to the staging area
+git add -A	Add all new and changed files to the staging area
+git commit -m "[commit message]"	Commit changes
+git rm -r [file-name.txt]	Remove a file (or folder)
+Branching & Merging
+Command	Description
+git branch	List branches (the asterisk denotes the current branch)
+git branch -a	List all branches (local and remote)
+git branch [branch name]	Create a new branch
+git branch -d [branch name]	Delete a branch
+git push origin --delete [branch name]	Delete a remote branch
+git checkout -b [branch name]	Create a new branch and switch to it
+git checkout -b [branch name] origin/[branch name]	Clone a remote branch and switch to it
+git branch -m [old branch name] [new branch name]	Rename a local branch
+git checkout [branch name]	Switch to a branch
+git checkout -	Switch to the branch last checked out
+git checkout -- [file-name.txt]	Discard changes to a file
+git merge [branch name]	Merge a branch into the active branch
+git merge [source branch] [target branch]	Merge a branch into a target branch
+git stash	Stash changes in a dirty working directory
+git stash clear	Remove all stashed entries
+Sharing & Updating Projects
+Command	Description
+git push origin [branch name]	Push a branch to your remote repository
+git push -u origin [branch name]	Push changes to remote repository (and remember the branch)
+git push	Push changes to remote repository (remembered branch)
+git push origin --delete [branch name]	Delete a remote branch
+git pull	Update local repository to the newest commit
+git pull origin [branch name]	Pull changes from remote repository
+git remote add origin ssh://git@github.com/[username]/[repository-name].git	Add a remote repository
+git remote set-url origin ssh://git@github.com/[username]/[repository-name].git	Set a repository's origin branch to SSH
+Inspection & Comparison
+Command	Description
+git log	View changes
+git log --summary	View changes (detailed)
+git log --oneline	View changes (briefly)
+git diff [source branch] [target branch]	Preview changes before merging
+
+	
