@@ -283,6 +283,81 @@ https://www.interviewbit.com/python-interview-questions/
 20. What is polymorphism in Python?
 	By using polymorphism in Python we will understand how to perform a single task in different ways. For example, designing a shape is the task and various possible ways in shapes are a triangle, rectangle, circle, and so on.
 	
+what types of sort function in list python:
+list.sort()
+sorted(list)
+sorted('string is More Easy'.split(" ") ,key=str.upper) #key condition make this as case senetivivte, means all lower letter first then capital.
+#output - [is,striing, Easy, More]
+student=[('hari','A',12),('mohan','K',3),('meena','c',9)]
+print(sorted(student,key= lambda student:student[0])) #print student with element sort based on 0th element
+
+
+
+what is isinstance() function in python ?
+truen boolean based on if a nobject is of a given class or not. 
+isinstance(object,class)
+
+what is math.ceil() and math.floor() and other function in math?
+import math
+to round of value to next lagerest integer we use ceil(value) print(ceil(10.3) # print 11
+to round of value to pervious lagerest integer we use floor(value) print(floor(10.9) # print 10
+factorial - print(math.factorial(3)) #6
+squareroot- print(math.sqrt(64)  #8
+Greates common divisor - print(math.gcd(8,52)) #4 print lagerest divisor for both no.
+
+what is random module ?
+import random
+to print random no. - print(random.random()) # printany no within 0 to may be in decimal
+print(random.random(2)) # printany no within 0 to n-1 but only integer
+print(random.random(1,7)) # print any no within 1 to 6 but only integer.
+print(random.sample(range(100),5)) # print 5 element from given list
+print(random.choice(list)) # print any 1 elemnt within provided list
+print(random.shuffle(list)) # print wholw list but with randow order of element.
+
+what is statistics module ?
+import statistics
+
+statistics.mean(list)  average of all element
+statistics.mode(list)  most occurence element
+statistics.median(list) mid element of list when sorted 
+statistics.variance(list)  give varianc of list - find difference from mean of each element -> then square of each element in last step -> average of all element in last step.
+statistics.stdev(list)    give standard deviance of list. - square root of variance.
+
+
+mode of file open in python file handeling ?
+w- write
+r- read
+r+- read and write
+a- for append 
+
+file=open("name with path", mode)
+file.read()  #to read file data
+file.write(" any data you want to write ")     #overwite on data present in file if open in write only mode.
+file.close()      #must need to close any open file
+
+seek in file handing - it is an point which read data after read a charcter it shift to next character if we need to start from begin then we needd to set at 0 by 
+file.seek(0) if 0 replace by some no then skip that no of character from begining.
+
+if we run file.read(10) 2 time then both data is different as pointer shift after read charatcter we use seek() to reset pointer.
+
+what is zip module in python?
+import zipfile
+zipfile=zipfile.ZipFile(name with path , mode) # open zip 
+zipfile.namelist()    #print all file inside zip
+zipfile.infolist():  #to get all meta data about inside file like permission and size every thing
+zipfile.getinfo(filename)   #to get meta data for a single file 
+zipfile.read(filename)  # to direct read content of a file inside zip
+zipfile.extract(filename).read() to extract a particular file
+zipfile.extractall() to extract all files in zip
+
+what is datetime module in python?
+import datetime
+a=datetime.now()
+a.date()  #to get current date and time.
+a.month, a.year ,a.hour, a.minutes ,a.second, a.time()
+
+a+timedelta(day=2)   # to get date day 2 from today
+a+timedelta(week=3)  # to get date 3 week from today
 21. occurance of element :
 		
 	input_list = ['a', 'a', 'a', 'b', 'b', 'b', 'b', 'c', 'c', 'c', 'c', 'c']
@@ -341,6 +416,58 @@ def count_overlapping_substring_occurrences(main_string, substring):
 main_string = "ABCDCDC"
 substring = "CDC"
 count_overlapping_substring_occurrences(main_string, substring)
+
+
+Python program to convert decimal to binary number?
+
+def DecimalToBinary(num): 
+    if num >= 1:
+        DecimalToBinary(num // 2)
+    print(num % 2, end = '')
+DecimalToBinary(703)
+
+# This function prints the longest palindrome subString
+
+def longestPalSubstr(str):
+    n = len(str)
+
+    # All subStrings of length 1 are palindromes
+    maxLength = 1
+    start = 0
+    # Nested loop to mark start  and end index
+    for i in range(n):
+        print('3    3  3          ')
+        for j in range(i, n):
+            flag = 1
+            print('0',i,j)
+            # Check palindrome
+            for k in range(0, ((j - i) // 2) + 1):
+                if (str[i + k] != str[j - k]):
+                    flag = 0
+                    break
+ 
+            # Palindrome
+            if (flag != 0 and (j - i + 1) > maxLength):
+                start = i
+                maxLength = j - i + 1
+ 
+    print("Longest palindrome substring is: ", end="")
+    printSubStr(str, start, start + maxLength - 1)
+ 
+    return maxLength
+ 
+str = "forgeeksskeegfor"
+print("\nLength is:", longestPalSubstr(str))
+
+ASCII CODE for stirng:
+A-Z = 65-90
+a-z = 97-122
+0-9 = 48-57
+
+
+ord(string character) -> to convert sting character into ascii value.
+chr(number) -> to convert ascii no to strimg character.
+
 
 
  How is memory managed in Python?
@@ -456,58 +583,3 @@ TRACE	For diagnosing purposes													Read	No	Yes	Yes
 CONNECT	To make the two-way connection between the client and the resource.	-			No	No	No
 
 
-
-
-Dajngo:-
-
-Python manage.py makemigrations 	makemigartion means:- create SQL query for chnages in model.py
-Python manage.py migrate   			migrate means :- apply all chnage in DB.
-
-"""
-from django.db import models
-
-class Author(models.Model):
-    name = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.name
-
-class Post(models.Model):
-    title = models.CharField(max_length=100)
-    content = models.TextField()
-    published_date = models.DateTimeField(blank=True, null=True)
-    author = models.ManyToManyField(Author, related_name="posts") or author= models.ForeignKey(Author, on_delete = models.CASCADE)
-
-    def __str__(self):
-        return self.title
-"""
-
-	Author.objects.all() # print all author
-
-	vmb = Author.objects.get(name="VM (Vicky) Brasseur")
-	vmb.name      # print author name ='VM (Vicky) Brasseur'
-	vmb.posts.all()   # print all post related to author='VM (Vicky) Brasseur'
-
-	for post in vmb.posts.all():
-		print(post.title)   #print all post related to author='VM (Vicky) Brasseur'
-		
-	Author.objects.filter(name__contains="Vic")  #print all author name like '%vic%'
-
-	a = Post(title = "Divide", content = "Ed Sheeran", pubilsh = "09-09-2012", Author='Brasseur')
-	a.save() # insert new record in DB  create operation
-
-	Post.objects.filter(title = "The Beatles");  #show all record having title="The Beatles"  read operation
-	
-	k=Post.objects.filter(pk=2);  #show record having primary key is 2
-	k.content='edited by me'
-	k.save()                       #edit the content by given name  update operation
-	
-	k.delete()    #delete the Pk=2 record
-	Post.objects.filter(title = "The Beatles").delete()  #delete multiple records all at once
-	
-	
-middleware:
-In Django, middleware is a lightweight plugin that processes during request and response execution. Middleware is used to perform a function in the application. The functions can be a security, session, csrf protection, authentication etc.
-
-signals in django:
-Signals are used to perform some action on modification/creation of a particular entry in Database. For example, One would want to create a profile instance, as soon as a new user instance is created in Database

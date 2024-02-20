@@ -1,0 +1,130 @@
+Djnago developed website - Instagram,Mozilla, The Washington Times, NextDoor
+
+Advantages of using Django:
+Rich Ecosystem: It comes with numerous third-party apps which can be easily integrated as per the requirements of the project.
+Maturity:  		Django has been in use for over a decade. In the time frame, a lot of features are added and enhanced to make it a Robust framework. Apart 
+				from that, there are a large number of developers who are using Django.
+Admin panel: 	Django provides an admin dashboard that we can use to do basic CRUD operations over the models.
+Plugins: 		Allow programmers to add various features to applications and leave sufficient space for customization.
+Libraries: 		Due to the large development community there is an ample number of libraries for every task.
+ORM: 			It helps us with working with data in a more object-oriented way.
+
+1. Explain Django Architecture?
+Django follows the MVT (Model View Template) pattern which is based on the Model View Controller architecture. It’s slightly different from the MVC pattern as it maintains its own conventions, so, the controller is handled by the framework itself. The template is a presentation layer. It is an HTML file mixed with Django Template Language (DTL). The developer provides the model, the view, and the template then maps it to a URL, and finally, Django serves it to the user.
+
+Explain the django project directory structure?
+manage.py - 	A command-line utility that allows you to interact with your Django project
+__init__.py - 	An empty file that tells Python that the current directory should be considered as a Python package
+settings.py - 	Comprises the configurations of the current project like DB connections.
+urls.py - 		All the URLs of the project are present here
+wsgi.py - 		This is an entry point for your application which is used by the web servers to serve the project you have created.
+	
+3. What are models in Django?
+A model in Django refers to a class that maps to a database table or database collection. Each attribute of the Django model class represents a database field. They are defined in app/models.py . Every model inherits from django.db.models.Model
+The metaclass helps you set things like available permissions, singular and plural versions of the name, associated database table name, whether the model is abstract or not, etc.
+
+What is Django Rest Framework?
+Django REST Framework is a web framework built over Django that helps to create web APIs which are a collection of URL endpoints containing available HTTP verbs that return JSON. It’s very easy to build model-backed APIs that have authentication policies and are browsable.
+
+What are benefits of using Django Rest Framework?
+Simplified API development with built-in serializers, authentication, and authorization mechanisms.
+Support for various data formats such as JSON, XML, and YAML.
+Powerful generic views and viewsets for handling common API operations.
+Support for authentication schemes like token-based authentication and OAuth.
+Serialization supports both ORM and non-ORM data sources.
+It’s customizable all the way down. Just use regular function-based views if you don’t need the more powerful features.
+It has extensive documentation and great community support.
+It’s used and trusted by internationally recognized companies including Mozilla, Red Hat, Heroku, and Eventbrite.
+
+
+What are serializers?
+Serializers allow complex data such as querysets and model instances to be converted to native Python datatypes that can then be easily rendered into JSON, XML or other content types. Serializers also provide deserialization, allowing parsed data to be converted back into complex types, after first validating the incoming data.
+
+What are Permissions in DRF?
+Permission checks are always run at the very start of the view, before any other code is allowed to proceed. Permission checks will typically use the authentication information in the request.user and request.auth properties to determine if the incoming request should be permitted.
+Permissions are used to grant or deny access for different classes of users to different parts of the API.
+
+What are Project-Level Permissions?
+Django REST Framework ships with a number of built-in project-level permissions settings we can use, including:
+AllowAny - any user, authenticated or not, has full access
+IsAuthenticated - only authenticated, registered users have access
+IsAdminUser - only admins/superusers have access
+IsAuthenticatedOrReadOnly - unauthorized users can view any page, but only authenticated users have write, edit, or delete privileges
+
+
+What are the disadvantages of Basic Authentication?
+Cons of Basic Authentication:
+On every single request the server must look up and verify the username and password, which is inefficient.
+User credentials are being passed in clear text—not encrypted at all, can be easily captured and reused.
+
+What is session authentication?
+A user enters their log in credentials (typically username/password)
+The server verifies the credentials are correct and generates a session object that is then stored in the database
+The server sends the client a session ID — not the session object itself—which is stored as a cookie on the browser
+On all future requests the session ID is included as an HTTP header and, if verified by the database, the request proceeds
+Once a user logs out of an application, the session ID is destroyed by both the client and server
+If the user later logs in again, a new session ID is generated and stored as a cookie on the client
+
+
+What is REST and REST API?
+REST (Representational State Transfer) is an architectural style for designing networked applications. It is based on a set of principles, such as using standard HTTP methods (GET, POST, PUT, DELETE) to perform operations on resources. A REST API is an API that follows the principles of REST, allowing clients to interact with server resources using HTTP.
+
+What are function-based API views in Django REST Framework?
+Function-based API views are views that are defined using regular Python functions. They receive an HTTP request as input and return an HTTP response. These views can handle different HTTP methods (GET, POST, PUT, DELETE) by implementing separate sections of code for each method.
+
+
+
+
+Dajngo:-
+
+Python manage.py makemigrations 	makemigartion means:- create SQL query for chnages in model.py
+Python manage.py migrate   			migrate means :- apply all chnage in DB.
+
+"""
+from django.db import models
+
+class Author(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+class Post(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    published_date = models.DateTimeField(blank=True, null=True)
+    author = models.ManyToManyField(Author, related_name="posts") or author= models.ForeignKey(Author, on_delete = models.CASCADE)
+
+    def __str__(self):
+        return self.title
+"""
+
+	Author.objects.all() # print all author
+
+	vmb = Author.objects.get(name="VM (Vicky) Brasseur")
+	vmb.name      # print author name ='VM (Vicky) Brasseur'
+	vmb.posts.all()   # print all post related to author='VM (Vicky) Brasseur'
+
+	for post in vmb.posts.all():
+		print(post.title)   #print all post related to author='VM (Vicky) Brasseur'
+		
+	Author.objects.filter(name__contains="Vic")  #print all author name like '%vic%'
+
+	a = Post(title = "Divide", content = "Ed Sheeran", pubilsh = "09-09-2012", Author='Brasseur')
+	a.save() # insert new record in DB  create operation
+
+	Post.objects.filter(title = "The Beatles");  #show all record having title="The Beatles"  read operation
+	
+	k=Post.objects.filter(pk=2);  #show record having primary key is 2
+	k.content='edited by me'
+	k.save()                       #edit the content by given name  update operation
+	
+	k.delete()    #delete the Pk=2 record
+	Post.objects.filter(title = "The Beatles").delete()  #delete multiple records all at once
+	
+	
+middleware:
+In Django, middleware is a lightweight plugin that processes during request and response execution. Middleware is used to perform a function in the application. The functions can be a security, session, csrf protection, authentication etc.
+
+signals in django:
+Signals are used to perform some action on modification/creation of a particular entry in Database. For example, One would want to create a profile instance, as soon as a new user instance is created in Database

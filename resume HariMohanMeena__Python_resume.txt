@@ -10,7 +10,7 @@ Git Hub github.com/harimohan251097
 SUMMARY
 Highly accomplished Software Engineer with over 3.5 years of specialized experience in Backend Development, data migration, and Integration. Adept in utilizing technologies such as Python, Kotlin, PL/SQL, Spring Boot, Restful API and GitHub. Demonstrates a commitment to ongoing professional development and staying current with emerging trends in the ever-evolving tech landscape. Possesses a fervent dedication to exploring and incorporating the latest advancements in the field.
 
-SKILLS
+SKILLS -Python, Kotlin Language, PostgreSQL, MySQL, Spring Boot, Django(python Library), GitHub and Gitlab, Restful API, AWS, JIRA
 
 Technical Skills
 Python, Kotlin Language, Spring Boot, Django(python Library), GitHub and Gitlab, Restful API, AWS, JIRA and Trello, Manual Testing, Autosys and Automic(scheduler)
