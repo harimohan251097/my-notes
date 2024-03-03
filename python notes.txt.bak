@@ -1,0 +1,513 @@
+https://www.interviewbit.com/python-interview-questions/
+
+1. What is Python? What are the benefits of using Python
+	Python is a high-level, interpreted, general-purpose programming language. Being a general-purpose language, it can be used to build almost any type of application with the right tools/libraries. 
+	
+	
+	easy to use									: Python provides excellent readability and simple syntaxes to make it easy tolearn.
+	Dynamic typing casting						: no need to provide datatype info while reading, write Data Types checked during execution.
+	provided support of large module and package: already writen code ease to use
+	Interpreted Language						: Python is an interpreted language that is used to execute the code line by line at a time
+	Highly Portable								: Python can run on different platforms such as Unix, Macintosh, Linux, Windows, 
+	GUI programming Support						: It implies that Python provides support to develop graphical user interfaces
+	User-friendly Data Structures				: has inbulit function which make works easy
+	
+2. What is PEP 8 ?
+	PEP stands for Python Enhancement Proposal. A PEP is an official design document providing information to the Python community, or describing a new feature for Python or its processes.
+
+3. What are lists and tuples? 
+	Lists and Tuples are both sequence data types that can store a collection of objects in Python.
+	
+	List  vs 						Tuple 
+	use [] square bracket			use() parantheses
+	Mutable (can be modify)  		Non mutable
+	slow 							fast
+	having inbulit function 		no inbuilt function
+	
+4. What are the common built-in data types in Python?
+	None Type: None
+	Numeric Types: Int, Float,complex,bool
+	sequence: list, tuple ,range( sequence used to store collection of items.), string
+	mapping: dictionary
+	set: set(Mutable unordered collection of distinct hashable objects.) and frozenset (Immutable collection of distinct hashable objects.)
+	
+5.What is pass in Python?
+	The pass keyword represents a null operation in Python. It is generally used for the purpose of filling up empty blocks of code which may execute during runtime but has yet to be written.
+
+6. What are modules and packages in Python?
+	Python packages and Python modules are two mechanisms that allow for modular programming in Python
+	
+	Simplicity: Working on a single module helps you focus on a relatively small portion of the problem at hand.
+	Maintainability: Modules are designed to enforce logical boundaries between different problem domains.
+	Reusability: Functions defined in a module can be easily reused by other parts of the application.
+	Scoping: Modules typically define a separate namespace, which helps avoid confusion between identifiers from other parts of the program.
+	
+7. What is the use of self in Python?
+	Self is used to represent the instance of the class. With this keyword, you can access the attributes and methods of the class in python.
+
+8.What is __init__?
+	__init__ is a contructor method in Python and is automatically called to allocate memory when a new object/instance is created.
+	
+9.What are unit tests in Python?
+	Unit test is a unit testing framework of Python.
+	Unit testing means testing different components of software separately. Can you think about why unit testing is important?
+
+10.What is slicing in Python?
+	taking out some part of an object like list , tuple, text a[start:stop:step]
+	
+11.What is Scope Resolution in Python?
+	in 2 module we have same function name so to make sure which function we are call we use scope resolution by put module name like django.models()
+	
+12.What are decorators in Python?
+	when we need to change behavior of our function without changing itself we use decorators by passing the name of function as parameter for another function.
+	we use decorator when we need to run same code on different function. use case - perform testing perform caching , check permission.
+	
+	def shout(text):
+		return text.upper()
+	#print(shout('Hello1'))
+	yell = shout
+	print(yell('Hello'))
+	
+4. What are Python Decorators?
+	Decorator is the most useful tool in Python as it allows programmers to alter the changes in the behavior of class or function. 
+
+	An example for Python Decorator is:
+
+	@gfg_decorator
+	def hi_decorator():
+		print("Gfg")
+		
+13. What is pickling and unpickling?
+	pliking : convert the object into a byte steam format so it can be dump as a file in memeory.
+	unplicking : convert dump file into its original state 
+	
+14. What are generators in Python?
+	Generators are functions that return an iterable collection of items, one at a time, in a set manner. example xrange() to generate sequence on requried bases. 
+	yield keyword use to return a generator object instead of return keyword.
+	
+7. Define generators in Python?
+	The way of implementing an effective representation of iterators is known as generators. It is only the normal function that yields expression in the function.
+
+14.A) iterator in python :	
+	An iterator is an object that can be iterated upon, meaning that you can traverse through all the values.(access each value one by one)
+	interator consist of the methods __iter__() and __next__(). iter for convert into iterable object and next for access value from starting.
+	Lists, tuples, dictionaries, and sets are all iterable objects.
+	
+	mytuple = ("apple", "banana", "cherry")
+	myit = iter(mytuple)
+
+	print(next(myit)) #apple
+	print(next(myit)) #banana
+	print(next(myit)) #cherry 
+
+15. What is the difference between .py and .pyc files?
+	.py files contain the source code of a program. Whereas, .pyc file contains the bytecode of your program. We get bytecode after compilation of .py file (source code).
+	
+16. how many type of inheritance work in python? 
+	Single :					Inheritance one parent into one child
+	Multi-level Inheritance: 	Inheritance one parent into one child then that child used as parent for another child
+	Multiple Inheritance:		Inheritance more than 1 parent into one child
+	Hierarchical Inheritance:	Inheritance one parent into	more then one child
+	
+17.Are access specifiers used in python?
+	Python does not make use of access specifiers specifically like private, public, protected, etc.
+	but has specific syntax for protected and private member:
+	protect having one _(underscore) before variable name.
+	private having two __(underscore) before  variable name.
+
+
+18. What does *args and **kwargs mean?
+	*args allows a function to accept any number of positional arguments i.e. arguments that are non-keyword arguments, variable-length argument list.
+	**kwargs is a special syntax that allows us to pass a variable length of keyword arguments to the function.
+	
+	def add(*args):
+		sum = 0;
+		for n in args:
+			sum = sum + n;
+		print("Sum:", sum)
+	add(1,2,3,5,6,7,8)
+	
+	def Person(**kwargs):
+		for key, value in kwargs.items():
+			print("{} -> {}".format(key, value))    # OR print(f'{key} -> {value}')
+	Person(Name = 'Sean', Sex = 'Male', Age = 38, City = 'London', Mobile = 9375821987)
+
+19.  overloading and overiding in python?
+	Method overriding is a concept of object oriented programming that allows us to change the implementation of a function in the child class that is defined in the parent class.
+	
+	Two or more methods have the same name but different numbers of parameters or different types of parameters, or both. These methods are called overloading
+	
+20. split() and join():  to convert string in list of string based on some character and vice verse
+		k='red blue green'
+		print(k.split())   #['red', 'blue', 'green']
+		wds = ["red", "blue", "green"]
+		glue = ';'
+		s = glue.join(wds)
+		print(s)
+		print(wds)   #'red;blue;green'
+
+3. What are the global and local variables in Python?
+	Global Variables in Python: The variables that are declared outside the function are called global variables. These variables can be accessed or invoked by any function in the program.
+
+	Example: 
+
+	def v() :
+	print g
+	g = "welcome to mindmajix"
+	v()
+	Output:
+
+	Welcome to mindmajix
+	Local Variables in Python: The variables that are declared inside a function are called local variables. These types of variables can be accessed only inside the function.
+
+5. Define slicing in Python?
+	Slicing is a procedure used to select a particular range of items from sequence types such as Strings, lists, and so on.
+
+6. Name some of the built-in modules in Python?
+	The built-in modules in Python are:
+
+	sys module
+	OS module
+	random module
+	collection module
+	JSON
+	Math module
+
+8. Write a program to count the number of capital letters in a file?
+	with open(SOME_LARGE_FILE) as countletter:
+	count = 0
+	text = countletter.read()
+	for character in text:
+	if character.isupper():
+	count += 1
+9. Write a program in Python to produce a Star triangle?
+	The code to produce a star triangle is as follows:
+
+	def pyfun(r):
+	for x in range(r):
+	print(' '*(r-x-1)+'*'*(2*x+1))	
+	pyfun(9)
+	Output: 
+
+			*
+		   ***
+		  *****
+		 *******
+		*********
+	   ***********
+	  *************
+	 ***************
+	*****************
+10. Write a program to check whether the given number is prime or not?
+	The code to check prime number is as follows:
+
+	# program to check the number is prime or not
+	n1 = 409
+	# num1 = int(input("Enter any one number: "))
+	# prime number is greater than 1
+	if n1 > 1:
+	# check the following factors
+		for x is in range of(2,n1):
+		if (n1 % x) == 0:
+			print(n1,"is not a prime number")
+			break
+		else:
+			print(n1,"is a prime number")
+	# if input number is smaller than
+	# or equal to the value 1, then it is not prime number
+	else:
+		print(n1,"is not a prime number")
+	"""Output:
+		409 is a prime number"""
+11. What is Django?
+	Django is an advanced python web framework that supports agile growth and clean pragmatic design, built through experienced developers, this cares much about the trouble of web development, so you can concentrate on writing your app without wanting to reinvent that wheel.
+	List the features of Django?
+	Excellent documentation
+	Python web framework
+	SEO optimized
+	High scalability
+	Versatile in nature
+	Offers high security
+	Thoroughly tested
+	Provides rapid Development
+12. List the common security issues that can be avoided by using Django?
+	A few common security issues that can be avoided by using Django are:
+
+	Clickjacking
+	Cross-site scripting and
+	SQL injection
+13. What are the database connections in Python Flask, explain?
+	Database-powered applications are supported by the flask. The relational database systems need to create a schema that requires piping the schema.sql file into an SQLite3 command. So, in this case, you need to install the SQLite3 command on your system to initiate and create the database in the flask.
+
+	We can request a database using flask in three ways, and they are:
+
+	before_request(): Using this we can request database before only without passing arguments.
+	after_request(): This method is called after requesting the database and also send the response to the client.
+	teardown_request(): This method is called in the cases where the responses are not guaranteed and the exception is raised. They have no access to modify the request.
+14. Explain the procedure to minimize or lower the outages of the Memcached server in your Python development?
+	The following are the steps used to minimize the outages of the Memcached server in your Python development, and they are.
+
+	When a single instance fails, this will impact on larger load of the database server. The client makes the request when the data is reloaded. In order to avoid this, the code that you have written must be used to lower cache stampedes then it will be used to leave a minimal impact.
+	The other way is to bring out the instance of the Memcached on a new machine by using the IP address of the lost machine.
+	Another important option is to lower the server outages is code. This code provides you with the liberty to modify the Memcached server list with minimal work
+	another way is by setting a timeout value that will be one of the options for memcac
+	Class Student:
+	def __init__(self, name):
+	self.name = name
+	S1=Student("XYZ")
+	print(S1.name)
+	hed clients to implement the Memcached server outage. When the performance of the server goes down, the client keeps on sending a request until the timeout limit is reached.
+15. What are the OOP's concepts available in Python?
+	Ans: Python is also an object-oriented programming language like other programming languages. It also contains different OOP's concepts, and they are 
+
+	Object
+	Class
+	Method
+	Encapsulation
+	Abstraction
+	Inheritance
+	Polymorphism
+16. What is data abstraction in Python?
+	In simple words, abstraction can be defined as hiding unnecessary data and showing or executing necessary data. In technical terms, abstraction can be defined as hiding internal processes and showing only the functionality. In Python abstraction can be achieved using encapsulation.
+17. Does Python make use of access specifiers?
+	Python does not make use of access specifiers and also it does not provide a way to access an instance variable. Python introduced a concept of prefixing the name of the method, function, or variable by using a double or single underscore to act like the behavior of private and protected access specifiers.
+18. Define Constructor in Python?
+	Constructor is a special type of method with a block of code to initialize the state of instance members of the class. A constructor is called only when the instance of the object is created. It is also used to verify that they are sufficient resources for objects to perform a specific task.
+
+	There are two types of constructors in Python, and they are:
+
+	Parameterized constructor
+	Non-parameterized constructor
+19. Define encapsulation in Python?
+	Encapsulation is one of the most important aspects of object-oriented programming. The binding or wrapping of code and data together into a single cell is called encapsulation. Encapsulation in Python is mainly used to restrict access to methods and variables.
+20. What is polymorphism in Python?
+	By using polymorphism in Python we will understand how to perform a single task in different ways. For example, designing a shape is the task and various possible ways in shapes are a triangle, rectangle, circle, and so on.
+	
+21. occurance of element :
+		
+	input_list = ['a', 'a', 'a', 'b', 'b', 'b', 'b', 'c', 'c', 'c', 'c', 'c']
+	occurrences = {}
+	for item in input_list:
+		if item in occurrences:
+			occurrences[item] += 1
+		else:
+			occurrences[item] = 1
+	print(occurrences)
+
+22. a= [2,4,6,8,9,1,4,5,2,5] return group of element  from list  if their sum = 10	
+
+	def find_sum_groups(nums, target_sum):
+		result = []
+		current_group = []
+
+		def backtrack(start_index, current_sum):
+			if current_sum == target_sum:
+				result.append(current_group[:])
+				return
+			elif current_sum > target_sum:
+				return
+
+			for i in range(start_index, len(nums)):
+				current_num = nums[i]
+				current_group.append(current_num)
+				backtrack(i + 1, current_sum + current_num)
+				current_group.pop()
+
+		backtrack(0, 0)
+		return result
+
+
+	a = [2, 4, 6, 8, 9, 1, 4, 5, 2, 5]
+	target_sum = 10
+
+	groups = find_sum_groups(a, target_sum)
+	print(groups)
+	Output: [[2, 8], [4, 6], [1, 9], [4, 2, 4], [5, 5]]
+
+python program to find number of times that the substring occurs in the given string including overlaping condition.
+	
+def count_overlapping_substring_occurrences(main_string, substring):
+    count = 0
+    start_index = 0
+
+    while True:
+        start_index = main_string.find(substring, start_index)  # Find the next occurrence
+        print(start_index)
+        if start_index == -1:
+            break  # No more occurrences found
+        count += 1
+        start_index += 1  # Move to the next character for potential overlapping occurrences
+    return count
+main_string = "ABCDCDC"
+substring = "CDC"
+count_overlapping_substring_occurrences(main_string, substring)
+
+
+ How is memory managed in Python?
+ Memory management in Python is handled by the Python Memory Manager. The memory allocated by the manager is in form of a private heap space dedicated to Python.
+ 
+ What are Python namespaces?
+ A namespace in Python ensures that object names in a program are unique and can be used without any conflict
+ 
+ What are Dict and List comprehensions?
+  short form of creating dict and list . Using comprehensions saves a lot of time and code that might be considerably more verbose (containing more lines of code).
+  List comprehension is a syntax construction to ease the creation of a list based on existing iterable.
+  
+What is lambda in Python?
+Lambda is an anonymous function in Python, that can accept any number of arguments, but can only have a single expression. It is generally used in situations requiring an anonymous function for a short time period. Lambda functions can be used in either of the two ways.
+Assigning lambda functions to a variable:
+Wrapping lambda functions inside another function:
+	
+ How do you copy an object in Python?
+ In Python, the assignment statement (= operator) does not copy objects. Instead, it creates a binding between the existing object and the target variable name. To create copies of an object in Python, we need to use the copy module. 
+ 
+ 
+What is the difference between xrange and range in Python?
+xrange() and range() are quite similar in terms of functionality. They both generate a sequence of integers, with the only difference that range() returns a Python list, whereas, xrange() returns an Generator object.
+
+How is an empty class created in python?
+An empty class does not have any members defined in it. It is created by using the pass keyword.
+
+Why is finalize used?
+Finalize method is used for freeing up the unmanaged resources and clean up before the garbage collection method is invoked. This helps in performing memory management tasks.
+
+What is the difference between / and // in Python?
+/ represents floor division whereas // represents precise division. For Example:
+5//2 = 2
+5/2 = 2.5
+	
+	
+How is Exceptional handling done in Python?
+There are 3 main keywords i.e. try, except, and finally which are used to catch exceptions and handle the recovering mechanism accordingly. Try is the block of a code that is monitored for errors. Except block gets executed when an error occurs.
+
+The beauty of the final block is to execute the code after trying for an error. This block gets executed irrespective of whether an error occurred or not. Finally, block is used to do the required cleanup activities of objects/variables.
+
+What is swapcase function in Python?
+It is a string’s function that converts all uppercase characters into lowercase and vice versa. It is used to alter the existing case of the string. This method creates a copy of the string which contains all the characters in the swap case.ex -string.swapcase()
+
+
+What are Iterators in Python?
+In Python, iterators are used to iterate a group of elements, containers like a list. Iterators are collections of items, and they can be a list, tuples, or a dictionary. Python iterator implements __itr__ and the next() method to iterate the stored elements. We generally use loops to iterate over the collections (list, tuple) in Python.
+
+What are unit tests in Python?
+Unit Testing is the first level of software testing where the smallest testable parts of the software are tested. This is used to validate that each unit of the software performs as designed. 
+
+Python Global Interpreter Lock (GIL)?
+Python Global Interpreter Lock (GIL) is a type of process lock that is used by Python whenever it deals with processes. Generally, Python only uses only one thread to execute the set of written statements. The performance of the single-threaded process and the multi-threaded process will be the same in Python and this is because of GIL in Python. We can not achieve multithreading in Python because we have a global interpreter lock that restricts the threads and works as a single thread.
+
+Exception & Error Handling in Python:
+An error is an issue in a program that prevents the program from completing its task. In comparison, an exception is a condition that interrupts the normal flow of the program. Both errors and exceptions are a type of runtime error, which means they occur during the execution of a program. ZeroDivisionError (Exception). example of error is a syntax error .
+
+
+What is Python Switch Statement 
+Python has implemented a switch case feature called “structural pattern matching”. You can implement this feature with the match and case keywords. Note that the underscore symbol is what you use to define a default case for the switch statement in Python.
+match term: 
+   case pattern-1: 
+   action-1
+   case pattern-2: 
+   action-2
+   case pattern-3: 
+   action-3
+   case _: 
+   action-default
+   
+What is Walrus Operator?
+The Walrus Operator allows you to assign a value to a variable within an expression. This can be useful when you need to use a value multiple times in a loop, but don’t want to repeat the calculation.
+names = ["Jacob", "Joe", "Jim"] 
+  
+if (name := input("Enter a name: ")) in names: 
+    print(f"Hello, {name}!") 
+else: 
+    print("Name not found.")
+	
+	
+
+Difference between Shallow copy and Deep copy
+S.No.	Shallow Copy	                                                                                                    Deep Copy
+1.	In Shallow copy, a copy of the original object is stored and only the reference address is finally copied.	In Deep copy, the copy of the original object 
+																												and the repetitive copies both are stored.
+2.	Shallow copy is faster than Deep copy.																		Deep copy is slower than Shallow copy.
+3.	The changes made in the copied object also reflect the original object.										There is no reflection on the original object when 
+																												the changes are 	made in the copied object.
+4.	It stores references of the object in the main memory.														It stores copies of the object values.
+
+
+
+Rest API methods :
+
+HTTP GET http://api.example.com/device-management/managed-devices  //Get all devices
+HTTP POST http://api.example.com/device-management/managed-devices  //Create new Device
+
+HTTP GET http://api.example.com/device-management/managed-devices/{id}  //Get device for given Id
+HTTP PUT http://api.example.com/device-management/managed-devices/{id}  //Update device for given Id for all coulumns
+HTTP DELETE http://api.example.com/device-management/managed-devices/{id}  //Delete device for given Id
+
+PATCH  //Update device for given Id for specified columns .
+
+Method	Summary																	CRUD	Accepts Request Body	Idempotnent	Safe
+GET		To fetch a single resource or group of resources						Read	No	Yes	Yes
+PUT		To update an entire resource in one go									Update	Yes	Yes	No
+POST	To create a new resource												Create	Yes	No	No
+PATCH	To partially update a resource											Update	Yes	No	No
+DELETE	To delete a resource													Delete	No	Yes	No
+OPTIONS	To get information on permitted operations								Read	No	Yes	Yes
+HEAD	To get metadata of the endpoint											Read	No	Yes	Yes
+TRACE	For diagnosing purposes													Read	No	Yes	Yes
+CONNECT	To make the two-way connection between the client and the resource.	-			No	No	No
+
+
+
+
+Dajngo:-
+
+Python manage.py makemigrations 	makemigartion means:- create SQL query for chnages in model.py
+Python manage.py migrate   			migrate means :- apply all chnage in DB.
+
+"""
+from django.db import models
+
+class Author(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+class Post(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    published_date = models.DateTimeField(blank=True, null=True)
+    author = models.ManyToManyField(Author, related_name="posts") or author= models.ForeignKey(Author, on_delete = models.CASCADE)
+
+    def __str__(self):
+        return self.title
+"""
+
+	Author.objects.all() # print all author
+
+	vmb = Author.objects.get(name="VM (Vicky) Brasseur")
+	vmb.name      # print author name ='VM (Vicky) Brasseur'
+	vmb.posts.all()   # print all post related to author='VM (Vicky) Brasseur'
+
+	for post in vmb.posts.all():
+		print(post.title)   #print all post related to author='VM (Vicky) Brasseur'
+		
+	Author.objects.filter(name__contains="Vic")  #print all author name like '%vic%'
+
+	a = Post(title = "Divide", content = "Ed Sheeran", pubilsh = "09-09-2012", Author='Brasseur')
+	a.save() # insert new record in DB  create operation
+
+	Post.objects.filter(title = "The Beatles");  #show all record having title="The Beatles"  read operation
+	
+	k=Post.objects.filter(pk=2);  #show record having primary key is 2
+	k.content='edited by me'
+	k.save()                       #edit the content by given name  update operation
+	
+	k.delete()    #delete the Pk=2 record
+	Post.objects.filter(title = "The Beatles").delete()  #delete multiple records all at once
+	
+	
+middleware:
+In Django, middleware is a lightweight plugin that processes during request and response execution. Middleware is used to perform a function in the application. The functions can be a security, session, csrf protection, authentication etc.
+
+signals in django:
+Signals are used to perform some action on modification/creation of a particular entry in Database. For example, One would want to create a profile instance, as soon as a new user instance is created in Database
