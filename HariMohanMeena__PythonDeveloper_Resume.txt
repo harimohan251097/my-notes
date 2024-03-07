@@ -1,0 +1,65 @@
+HARI MOHAN MEENA
+Software Engineer
++91-9617793297 
+hari2510971@gmail.com 
+https://www.linkedin.com/in/harimohanmeena/ 
+Gurugram, HR
+
+Summary
+Highly accomplished Software Engineer with over 3.3 years of specialized experience in Backend Development, data migration, and Integration. Adept in utilizing technologies such as Python, Kotlin, PL/SQL, Spring Boot, Restful API, and GitHub. Demonstrates a commitment to ongoing professional development and staying current with emerging trends in the ever-evolving tech landscape. Possesses a fervent dedication to exploring and incorporating the latest advancements in the field.
+
+Skills
+Technical Skills - Python, Kotlin, Spring Boot, Django (Python Library), GitHub, and Gitlab, Restful API, AWS, JIRA, and Trello Autosys and Automic (scheduler) Databases - PostgreSQL, MySQL, MongoDB Analytics Tools - Excel, Informatica PC, Informatica BDM, Informatica TDM Operating System - Windows, Linux Soft Skill - Problem Solving, Positive Attitude, Team Work, Creative Mindset, Self-Motivated
+
+Experience
+
+Edupherz Pvt. Ltd
+Software Engineer - Backend Developer Gurugram 06/2023 - Present
+
+• Engaged in the development and contributed to projects for the website named Fernglasz.
+• Developed and maintained RESTful APIs using Spring Boot and Kotlin to efficiently handle client-server communication, ensuring high performance and scalability.
+• Designed and implemented data models and database schemas in PostgreSQL for optimal data storage and retrieval, including complex queries and indexing strategies.
+• Integrated Spring Security to enforce authentication and authorization mechanisms for securing REST API endpoints, safeguarding sensitive data.
+• Leveraged Spring Data JPA to simplify database operations and enhance code maintainability, reducing boilerplate code.
+• Collaborated with front-end developers to define API contracts and ensure seamless integration between the backend and frontend layers.
+• Conducted code reviews and enforced coding standards to maintain clean, maintainable, and efficient codebases.
+• Optimized database queries and application performance, resulting in a 30% reduction in response times.
+• Implemented error handling to provide meaningful error messages and facilitate debugging.
+• Worked on Agile development teams, participating in daily stand-ups, sprint planning, and retrospectives to deliver high-quality software.
+
+Deloitte Consulting India Pvt. Ltd
+DC-Analyst Gurugram 03/2021 - 05/2023
+
+Python Developer
+• Held the responsibility of developing ETL code and constructing data pipelines to facilitate the smooth migration of transactional records from on-premises files to the Operational Data Store (ODS).
+• Handle all the deliverables for both the client and onshore teams, including conducting analysis and performing unit testing using Python, PL/SQL, and Informatica tools.
+• Served as the Single Point of Contact (SPOC) for the Development team.
+• Successfully resolved more than 50+ defects raised by the QA and UAT teams, ensuring efficient and effective bug fixing throughout the project.
+• Deployed a total of 8+ releases for Production (FUSION and CONCORD source) systems, ensuring smooth and effective implementation of updates and enhancements.
+• Actively worked on fulfilling over 35 PCR (Process Change Requests) requirements as per the client's specifications and needs.
+• Accountable for managing the data load associated with our developed code in QA and UAT Environments.
+
+Nptel certification for Programming, Data Structures, and Algorithms using Python - Certification ID: NEPTEL19CS08S21780019
+Red Hat Certified System Administrator - Certification ID: 180-141-368.
+
+Kloudone Technology Works Pvt. Ltd
+Software Engineer Trainee - Backend Developer Jaipur 10/2020 - 03/2021
+
+• Gained hands-on experience in developing services and applications by utilizing the Python Django Framework, Rest API, and MySQL database.
+• Identified the root cause of slow speeds in the applications and documented a comprehensive process to enhance the robustness of the database query system.
+• Responsible for integrating the backend component with the front-end component.
+• Worked collaboratively with another developer to integrate RESTful APIs in Django, enabling the internal analytics team to significantly enhance reporting speed by 24%.
+
+Education
+Gurukula Kangri University, Haridwar
+Bachelor's Degree in Computer Science Engineering 2016 - 2020
+
+Courses & Certificates
+Learning Django Python Development by Building Project - Certificate by Eduonix
+Microsoft Technology Associate: Software Development Fundamentals - Certificate by Microsoft
+
+Achievements
+Awarded the “Team Spot Award” for winning the confidence of the client and delivering a defect-free production on time. - Deloitte 2023
+Awarded the “Outstanding Performer of the year” for the excellent work done. - Deloitte 2022
+Secured Global Rank-2932 in Google Hash code among 1 lakh Participants Worldwide. - Google Hash code 2019
+Winner in Janagni-2K18 (National Level College Techfest) in a Coding Competition - GKV university 2018
